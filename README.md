@@ -1,182 +1,78 @@
-📝 Next.js Portfolio Project – Task 1
+# Next.js Portfolio – Task 1
 
-This project is a beginner-level Next.js portfolio website built using the App Router.
-It contains a homepage, an About section with a nested layout, and a Users section that fetches user data from a fake API and displays it using dynamic routing.
+This is my first Next.js project built using the App Router.  
+In this task, I replaced the "Projects" tab with a **Users** tab that displays a list of users fetched from a fake API, along with dynamic user detail pages.
 
-This project demonstrates the basics of:
+---
 
-Next.js App Router
+## 🚀 Features
 
-Server Components
+### ✔ Portfolio Pages
+- Home page
+- About page with subpages:
+  - Background
+  - Skills
+  - Experience
+- Shared layout for all About pages
 
-Dynamic Routes
+### ✔ Users Page (Replaced Projects)
+- Fetches users from JSONPlaceholder API:
+  https://jsonplaceholder.typicode.com/users
+- Displays a list of users
+- Each user links to a dynamic route (`/users/[id]`)
 
-Data Fetching (fetch)
+### ✔ Dynamic User Details Page
+- Fetches detailed info for a specific user
+- Displays the user's ID and other information
 
-Route-specific layouts
+### ✔ Error & Loading Handling
+- `loading.tsx` shows while data loads
+- `error.tsx` shows if fetch fails
 
-Navigation using next/link
+---
 
-Error & loading handling
+## 🗂 Folder Structure
 
-🚀 Features Implemented
-✔ 1. Portfolio Home Page
-
-A simple homepage introducing the developer.
-
-✔ 2. About Page with Subpages
-
-The About page uses its own layout.tsx containing:
-
-Background
-
-Skills
-
-Experience
-
-Each of these is its own route:
-
-/about/background
-/about/skills
-/about/experience
-
-
-And they all share a common About layout with navigation buttons.
-
-✔ 3. Users Page (Replaced Projects Tab)
-
-Instead of a "Projects" tab, this task uses a Users tab.
-
-The Users page:
-
-Fetches real data from JSONPlaceholder API
-
-https://jsonplaceholder.typicode.com/users
-
-
-Displays list of users
-
-Each user links to a dynamic route
-
-Example URL:
-
-/users/3
-
-✔ 4. Dynamic User Details Page
-
-Each user page fetches additional information for that specific user.
-
-✔ 5. Error & Loading Handling
-
-If the API fails, Next.js automatically loads error.tsx
-
-While data is loading, loading.tsx appears
-
-🗂 Project Structure
 app/
- ├─ layout.tsx                 # Global layout
- ├─ page.tsx                   # Home page
- ├─ about/
- │    ├─ layout.tsx            # About layout
- │    ├─ page.tsx              # About main
- │    ├─ background/
- │    │     └─ page.tsx
- │    ├─ skills/
- │    │     └─ page.tsx
- │    └─ experience/
- │          └─ page.tsx
- ├─ users/
- │    ├─ page.tsx              # User list page
- │    ├─ loading.tsx           # Automatic loading UI
- │    ├─ error.tsx             # Error UI when data fails
- │    └─ [id]/
- │          └─ page.tsx        # Dynamic user detail page
+├─ layout.tsx
+├─ page.tsx
+├─ about/
+│ ├─ layout.tsx
+│ ├─ page.tsx
+│ ├─ background/
+│ │ └─ page.tsx
+│ ├─ skills/
+│ │ └─ page.tsx
+│ └─ experience/
+│ └─ page.tsx
+├─ users/
+│ ├─ page.tsx
+│ ├─ loading.tsx
+│ ├─ error.tsx
+│ └─ [userId]/
+│ └─ page.tsx
 public/
- └─ images/
 styles/
- └─ globals.css
 
-🔧 Technologies Used
+## 🛠 Technologies Used
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+- JSONPlaceholder Fake API
 
-Next.js 14 (App Router)
+---
 
-React 18
+## ▶️ Getting Started
 
-TypeScript
-
-Tailwind CSS (styling)
-
-JSONPlaceholder API for fake user data
-
-Dynamic Routing
-
-Next.js Routing Layouts
-
-Server Components
-
-📦 How It Works
-⭐ Users Page (/users)
-
-Fetches user list using fetch() inside a Server Component
-
-Displays users with clickable links
-
-Each link navigates to a dynamic route
-
-⭐ Dynamic Route (/users/[id])
-
-Reads the id from URL
-
-Fetches the user details
-
-Displays user info on a dedicated page
-
-⭐ About Section
-
-Uses a nested layout so all about pages share the same navigation and styling.
-
-🧪 What You Learned in This Task
-
-How to build pages/routes with App Router
-
-How to build nested layouts
-
-How to use server-side data fetching
-
-How to use dynamic segments ([id])
-
-How to create error & loading UI
-
-How to structure a Next.js application properly
-
-How to use Tailwind for UI
-
-How to use next/link for navigation
-
-▶️ Getting Started
-
-Install dependencies:
+**Install dependencies:**
 
 npm install
 
-
-Run development server:
+**Run the development server:**
 
 npm run dev
 
-
-Visit:
+**Open in browser:**
 
 http://localhost:3000
-
-🙌 Future Improvements
-
-Add search to Users page
-
-Add pagination
-
-Create a real Projects page later
-
-Add a contact form
-
-Integrate animations using Framer Motion
